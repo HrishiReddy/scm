@@ -7,6 +7,10 @@ public class Calculation {
 		 System.out.println("Calculation");
 		 System.out.println("testing");
 
+	System.out.println("Hello world");
+		 System.out.println("Calculation");
+		 System.out.println("testing");
+
 	}
 
 	public Calculation() {
