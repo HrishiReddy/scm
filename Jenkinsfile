@@ -29,6 +29,11 @@ pipeline {
                 }
             }
         }
+             stage('upload to nexus') {
+            steps {
+              nexusArtifactUploader artifacts: [[artifactId: 'Testing_test', classifier: '', file: 'target/TestingProgram/0.0.1-SNAPSHOT.war', type: 'war']], credentialsId: 'nexus-user-credentials', groupId: 'Testing', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'http://localhost:8081/repository/sample/', version: '0.0.1-SNAPSHOT'
+            }
+
        
         
     }
