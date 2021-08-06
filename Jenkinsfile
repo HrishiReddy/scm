@@ -29,10 +29,7 @@ pipeline {
                 }
             }
         }
-        stage('POST BUILD')
-        {
-            
-        }
+       
         
     }
 }
