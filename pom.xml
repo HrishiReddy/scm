@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>Testing</groupId>
   <artifactId>Testing_test</artifactId>
-  <version>3.0.0</version>
+  <version>0.0.1-SNAPSHOT</version>
   <name>TestingProgram</name>
   <packaging>jar</packaging>
   <properties>
