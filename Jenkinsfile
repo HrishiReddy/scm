@@ -31,7 +31,8 @@ pipeline {
         }
              stage('upload to nexus') {
             steps {
-              nexusArtifactUploader artifacts: [[artifactId: 'Testing_test', classifier: '', file: 'target/TestingProgram/0.0.1-SNAPSHOT.jar', type: 'jar']], credentialsId: 'nexus-user-credentials', groupId: 'Testing', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'http://localhost:8081/repository/sample/', version: '0.0.1-SNAPSHOT'
+                nexusArtifactUploader artifacts: [[artifactId: 'Testing_test', classifier: '', file: 'target/TestingProgram-5.1.1-SNAPSHOT.jar', type: 'jar']], credentialsId: 'nexus-user-credentials', groupId: 'Testing', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'junit_Testing_upload_nexus', version: '5.1.1-SNAPSHOT'
+                
             }
 
              }
