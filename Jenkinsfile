@@ -23,15 +23,18 @@ pipeline {
             post {
                 // If Maven was able to run the tests, even if some of the test
                 // failed, record the test results and archive the jar file.
-                success {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
+      //          success {
+      //              junit '**/target/surefire-reports/TEST-*.xml'
+      //            archiveArtifacts 'target/*.jar'
                 }
             }
         }
              stage('upload to nexus') {
             steps {
-                nexusArtifactUploader artifacts: [[artifactId: 'Testing_test', classifier: '', file: 'target/TestingProgram-5.1.1-SNAPSHOT.jar', type: 'jar']], credentialsId: 'nexus-user-credentials', groupId: 'Testing', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'junit_Testing_upload_nexus', version: '5.1.1-SNAPSHOT'
+                nexusArtifactUploader artifacts: [[artifactId: 'Testing_test', classifier: '', 
+                                                   file: 'target/*.jar', type: 'jar']], 
+                    credentialsId: 'nexus-user-credentials', groupId: 'Testing', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', 
+                    repository: 'junit_Testing_upload_nexus', version: '5.1.1-SNAPSHOT'
                 
             }
 
