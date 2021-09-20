@@ -33,7 +33,7 @@ pipeline {
              stage('upload to nexus') {
             steps {
                nexusArtifactUploader artifacts: [[artifactId: 'Testing_test', classifier: '', file: 'target/TestingProgram-1.0.0.jar', type: 'jar']], 
-                   credentialsId: 'nexusAdmin', groupId: 'Testing', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3',
+                   credentialsId: 'nexus-user-credentials', groupId: 'Testing', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3',
                    protocol: 'http', repository: 'scm', version: '1.0.0'
             }
 
